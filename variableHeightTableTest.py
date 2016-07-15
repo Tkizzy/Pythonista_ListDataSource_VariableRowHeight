@@ -12,9 +12,6 @@ ZKMvkli6GjRwHFvYu5IpwoSGho8SKA==
 import bz2
 from base64 import b64decode
 pyui = bz2.decompress(b64decode(data))
-#v = ui.load_view_str(pyui.decode('utf-8'))
-
-
 
 import ui, random, os
 from objc_util import *
