@@ -1,3 +1,21 @@
+data = '''\
+QlpoOTFBWSZTWdDR4kUAATTfgFUQUGd/8D/AFYq/757aQAG93S7pOEooajE9TTEAAADQAA
+PUGptSZBppAGQAA0AAABiJEANAhg0MQAmhpgASSamRpoU/UjQGgAAAGRoIgsEhgR0UD9/q
+OOxZZAHptOJ2CMS0AFGCAMBJiCRSKVMEFgYIOWfz24dgGL8QGXchgCCEO+21Eg0ryeXwqA
+tT0UAlaALCLWQSUMEIMZwHOD7p3EkWTISpkaEIgZxNIagMEJMj2NMK5MCkigDM0bFxsmlS
+DkihAGSMkPPRfs0kBUjCkZJA5HnQ4vlaGmJkD2za3LjNiSTVElLHypMkM5ZK0QSmFunQFg
+gy1Hn5am4OMiJgRaphyZKNuzYRJMvZWM6Aweg2s+CFryXerwqGu9EPskDjrSGJFgmQBBS+
+kIO6uSqnyVUeHlVfzCWBrX55Hhh8imBStejI1Rjh91cmcFm02SGewNVK6Qii2ylMEbVBiS
+vkUBoyzjXhPEKbBiDXBgSWAPkVMoLdmrkUiYoqtypALJFTNkWYGdWmZRnUWyXUB2L5mlvY
+ZKMvkli6GjRwHFvYu5IpwoSGho8SKA==
+'''
+import bz2
+from base64 import b64decode
+pyui = bz2.decompress(b64decode(data))
+#v = ui.load_view_str(pyui.decode('utf-8'))
+
+
+
 import ui, random, os
 from objc_util import *
 import sys, objc_util, ctypes
@@ -17,7 +35,8 @@ class showDetailedEntryView(ui.View):
 		
 		#self.view = ui.load_view("../../Documents/aaaFiveStarsProduction/destinyListDetailView.pyui")
 		#self.view = ui.load_view("/private/var/mobile/Containers/Shared/AppGroup/"+os.path.abspath(__file__)[47:83]+"/Documents/aaaFiveStarsProduction/destinyListDetailView.pyui")
-		self.view = ui.load_view(groupIDPath+"/Documents/aaaFiveStarsProduction/destinyListDetailView.pyui")
+		#self.view = ui.load_view(groupIDPath+"/Documents/aaaFiveStarsProduction/destinyListDetailView.pyui")
+		self.view = ui.load_view_str(pyui.decode('utf-8'))
 		self.tableView = self.view["tableViewDetail"]
 		self.tableView.row_height = 70
 		self.view.present('fullscreen')#,hide_title_bar=True)
