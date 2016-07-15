@@ -19,7 +19,6 @@ import sys, objc_util, ctypes
 import swizzle
 import dialogs
 
-#sys.path.append("../../Documents/aaaFiveStarsProduction/")
 groupIDPath=str(ObjCClass('NSFileManager').defaultManager().containerURLForSecurityApplicationGroupIdentifier_('group.pythonista').path())
 
 
